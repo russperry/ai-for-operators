@@ -184,7 +184,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
 <!-- Sticky Header -->
 <header class="sticky-header" id="stickyHeader">
   <span class="logo">AI for Operators</span>
-  <a href="#apply" class="btn-sm">Apply Now</a>
+  <a href="#apply-form" class="btn-sm">Apply Now</a>
 </header>
 
 <!-- Hero -->
@@ -194,7 +194,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
     <h1 class="reveal">Stop Guessing About AI.<br>Start Operating With It.</h1>
     <p class="hero-sub reveal">A hands-on program for CEOs and founders who want to implement AI in their business — led by someone who already did it at a $25M company.</p>
     <div class="reveal">
-      <a href="#apply" class="btn-primary">Apply for Cohort 1</a>
+      <a href="#apply-form" class="btn-primary">Apply for Cohort 1</a>
       <p class="hero-meta">Starting May 2026 · 15 Seats · Application Required</p>
     </div>
   </div>
@@ -365,7 +365,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
           <li>AI Readiness Scorecard</li>
           <li>Guest expert sessions</li>
         </ul>
-        <a href="#apply" class="btn-outline">Apply Now</a>
+        <a href="#apply-form" class="btn-outline">Apply Now</a>
       </div>
 
       <div class="price-card vip">
@@ -379,7 +379,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
           <li>Direct Telegram access to Russ</li>
           <li>Leadership team training session</li>
         </ul>
-        <a href="#apply" class="btn-card-primary">Apply for VIP</a>
+        <a href="#apply-form" class="btn-card-primary">Apply for VIP</a>
       </div>
 
     </div>
@@ -428,7 +428,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
 </section>
 
 <!-- Application Form -->
-<section class="section reveal" id="apply">
+<section class="section reveal" id="apply-form">
   <div class="container">
     <h2>Apply for Cohort 1</h2>
     <p style="color:var(--gray);margin-top:16px;font-size:17px">Applications are reviewed within 48 hours. If it's a fit, we'll schedule a quick call.</p>
@@ -529,7 +529,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
 <section class="final-cta reveal">
   <div class="container">
     <h2>Ready to stop watching<br>and start operating?</h2>
-    <a href="#apply" class="btn-primary">Apply for Cohort 1</a>
+    <a href="#apply-form" class="btn-primary">Apply for Cohort 1</a>
     <p class="hero-meta">Questions? Email <a href="mailto:russ@designpickle.com">russ@designpickle.com</a></p>
   </div>
 </section>
@@ -609,10 +609,10 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
 })();
 
 // Fix: ensure all #apply links work on mobile (iOS touch event fallback)
-document.querySelectorAll('a[href="#apply"]').forEach(function(a){
+document.querySelectorAll('a[href="#apply-form"]').forEach(function(a){
   a.addEventListener('touchend',function(e){
     e.preventDefault();
-    var target=document.getElementById('apply');
+    var target=document.getElementById('apply-form');
     if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
   },{passive:false});
 });
