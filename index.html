@@ -246,7 +246,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
     <ul class="checklist">
       <li><span class="check">✓</span>8 weekly live sessions (90 min each)</li>
       <li><span class="check">✓</span>3 private 1:1 coaching calls with Russ</li>
-      <li><span class="check">✓</span>Private Telegram group (lifetime access)</li>
+      <li><span class="check">✓</span>Private Telegram group</li>
       <li><span class="check">✓</span>AI Implementation Playbook library</li>
       <li><span class="check">✓</span>Tool evaluation framework</li>
       <li><span class="check">✓</span>AI Readiness Scorecard for your business</li>
@@ -359,7 +359,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
         <ul class="price-features">
           <li>8 weekly live sessions</li>
           <li>3 private 1:1 coaching calls</li>
-          <li>Private Telegram group (lifetime)</li>
+          <li>Private Telegram group</li>
           <li>AI Implementation Playbook library</li>
           <li>Tool evaluation framework</li>
           <li>AI Readiness Scorecard</li>
@@ -434,7 +434,11 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
     <p style="color:var(--gray);margin-top:16px;font-size:17px">Applications are reviewed within 48 hours. If it's a fit, we'll schedule a quick call.</p>
 
     <div class="apply-form" id="appForm">
-      <form id="applicationForm">
+      <form id="applicationForm" action="https://formsubmit.co/russ@designpickle.com" method="POST">
+        <input type="hidden" name="_subject" value="New AI for Operators Application">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://russperry.github.io/ai-for-operators/?applied=true">
+        <input type="hidden" name="_template" value="table">
         <div class="form-group">
           <label>Full Name</label>
           <input type="text" name="name" required placeholder="Russ Perry">
@@ -620,18 +624,7 @@ function selectTier(el){
   el.querySelector('input').checked=true;
 }
 
-// Form submission — uses formsubmit.co standard POST (most reliable on mobile)
-(function(){
-  var form=document.getElementById('applicationForm');
-  if(!form)return;
-  form.setAttribute('action','https://formsubmit.co/russ@designpickle.com');
-  form.setAttribute('method','POST');
-  // Add formsubmit config fields
-  var h1=document.createElement('input');h1.type='hidden';h1.name='_subject';h1.value='New AI for Operators Application';form.appendChild(h1);
-  var h2=document.createElement('input');h2.type='hidden';h2.name='_captcha';h2.value='false';form.appendChild(h2);
-  var h3=document.createElement('input');h3.type='hidden';h3.name='_next';h3.value=window.location.origin+window.location.pathname+'?applied=true';form.appendChild(h3);
-  var h4=document.createElement('input');h4.type='hidden';h4.name='_template';h4.value='table';form.appendChild(h4);
-})();
+// Form: no JS needed — native HTML POST to formsubmit.co
 // Show success if returning from submission
 if(window.location.search.indexOf('applied=true')!==-1){
   var af=document.getElementById('appForm');
