@@ -246,7 +246,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
     <ul class="checklist">
       <li><span class="check">✓</span>8 weekly live sessions (90 min each)</li>
       <li><span class="check">✓</span>3 private 1:1 coaching calls with Russ</li>
-      <li><span class="check">✓</span>Private Slack community (lifetime access)</li>
+      <li><span class="check">✓</span>Private Telegram group (lifetime access)</li>
       <li><span class="check">✓</span>AI Implementation Playbook library</li>
       <li><span class="check">✓</span>Tool evaluation framework</li>
       <li><span class="check">✓</span>AI Readiness Scorecard for your business</li>
@@ -359,7 +359,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
         <ul class="price-features">
           <li>8 weekly live sessions</li>
           <li>3 private 1:1 coaching calls</li>
-          <li>Private Slack community (lifetime)</li>
+          <li>Private Telegram group (lifetime)</li>
           <li>AI Implementation Playbook library</li>
           <li>Tool evaluation framework</li>
           <li>AI Readiness Scorecard</li>
@@ -376,7 +376,7 @@ footer .subtle{font-size:13px;color:#444;margin-top:8px}
           <li>Everything in Standard</li>
           <li>6 total 1:1 calls (instead of 3)</li>
           <li>Custom AI Audit of your business</li>
-          <li>Direct Slack access to Russ</li>
+          <li>Direct Telegram access to Russ</li>
           <li>Leadership team training session</li>
         </ul>
         <a href="#apply" class="btn-card-primary">Apply for VIP</a>
@@ -620,30 +620,26 @@ function selectTier(el){
   el.querySelector('input').checked=true;
 }
 
-// Form submission — sends to email via formsubmit.co (no backend needed)
+// Form submission — uses formsubmit.co standard POST (most reliable on mobile)
 (function(){
   var form=document.getElementById('applicationForm');
   if(!form)return;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=document.getElementById('submitBtn');
-    btn.disabled=true;
-    btn.textContent='Submitting...';
-    var data=new FormData(form);
-    fetch('https://formsubmit.co/ajax/russ@designpickle.com',{
-      method:'POST',
-      body:data
-    }).then(function(r){return r.json()}).then(function(){
-      document.getElementById('appForm').style.display='none';
-      document.getElementById('formSuccess').style.display='block';
-      document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
-    }).catch(function(){
-      btn.disabled=false;
-      btn.textContent='Submit Application';
-      alert('Something went wrong. Please email russ@designpickle.com directly.');
-    });
-  });
+  form.setAttribute('action','https://formsubmit.co/russ@designpickle.com');
+  form.setAttribute('method','POST');
+  // Add formsubmit config fields
+  var h1=document.createElement('input');h1.type='hidden';h1.name='_subject';h1.value='New AI for Operators Application';form.appendChild(h1);
+  var h2=document.createElement('input');h2.type='hidden';h2.name='_captcha';h2.value='false';form.appendChild(h2);
+  var h3=document.createElement('input');h3.type='hidden';h3.name='_next';h3.value=window.location.origin+window.location.pathname+'?applied=true';form.appendChild(h3);
+  var h4=document.createElement('input');h4.type='hidden';h4.name='_template';h4.value='table';form.appendChild(h4);
 })();
+// Show success if returning from submission
+if(window.location.search.indexOf('applied=true')!==-1){
+  var af=document.getElementById('appForm');
+  var sf=document.getElementById('formSuccess');
+  if(af)af.style.display='none';
+  if(sf){sf.style.display='block';sf.scrollIntoView({behavior:'smooth',block:'center'});}
+  history.replaceState(null,'',window.location.pathname);
+}
 </script>
 
 </body>
