@@ -165,7 +165,7 @@ a.btn-primary,a.btn-sm,a.btn-outline,a.btn-card-primary{-webkit-tap-highlight-co
 .about-bio{color:var(--gray);font-size:17px;line-height:1.75}
 
 /* Investment / Pricing */
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.pricing-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:48px;max-width:520px;margin-left:auto;margin-right:auto}
 .price-card{background:var(--dark-card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;position:relative}
 .price-card.vip{border:1px solid var(--volt);background:linear-gradient(180deg,rgba(213,255,2,.04) 0%,rgba(213,255,2,0) 100%)}
 .price-badge{position:absolute;top:-12px;left:32px;background:var(--volt);color:var(--black);padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
@@ -237,11 +237,6 @@ footer .subtle{color:#444;font-size:13px}
 </head>
 <body>
 
-<!-- Announcement Bar: Early Bird -->
-<div class="announce-bar">
-  <strong>Early Bird — $1,500</strong> with code <strong>EARLYBIRD</strong> through April 27. Then $2,000. 30 seats. Kicks off May 5.
-</div>
-
 <!-- Sticky Header -->
 <header class="sticky-header" id="stickyHeader">
   <span class="logo">AI Chief of Staff</span>
@@ -259,7 +254,7 @@ footer .subtle{color:#444;font-size:13px}
     <p class="hero-sub reveal">Two weeks from now, you'll have a fully operating AI assistant that runs your phone, calendar, inbox, and daily briefings — built by you, tuned to your business, alongside a CEO who already built one for himself.</p>
     <div class="reveal">
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center">
-        <a href="#enroll" class="btn-primary">Enroll Now — $1,500</a>
+        <a href="#enroll" class="btn-primary">Enroll Now — $2,000</a>
         <a href="tel:+16508008971" class="btn-call-pin btn-call-pin-lg">(650) 800-8971</a>
       </div>
       <p class="hero-meta">30 Seats · Live May 5, 10, 11, 17 · Recorded for 30 days</p>
@@ -389,7 +384,7 @@ footer .subtle{color:#444;font-size:13px}
 
     <p class="stack-compare">
       Or you build it once, own it forever, and pay<br>
-      <em>$1,500 this week.</em>
+      <em>$2,000 once.</em>
     </p>
   </div>
 </section>
@@ -527,27 +522,9 @@ footer .subtle{color:#444;font-size:13px}
     <div class="pricing-grid">
 
       <div class="price-card vip">
-        <span class="price-badge">Early Bird · Ends Apr 27</span>
-        <p class="price-tier">Early Bird</p>
-        <p class="price-amount">$1,500</p>
-        <p class="price-compare">$2,000 regular</p>
-        <p class="price-deadline">Save $500 with code <strong style="color:var(--volt)">EARLYBIRD</strong> · Ends April 27, 11:59 PM MST</p>
-        <ul class="price-features">
-          <li>4 live 3-hr sessions (12 hrs total)</li>
-          <li>All session recordings (30-day access)</li>
-          <li>Private cohort support channel</li>
-          <li>Full AI Chief of Staff system you own</li>
-          <li>Templates, prompts, and deployment kit</li>
-          <li>100% satisfaction guarantee</li>
-        </ul>
-        <a href="https://buy.stripe.com/6oU00l7fIbg6g9Y1zFbEA01?prefilled_promo_code=EARLYBIRD" class="btn-card-primary" id="stripe-early" target="_blank" rel="noopener">Claim Early Bird — $1,500</a>
-        <p style="font-size:13px;color:var(--dim);margin-top:12px;text-align:center">Code <strong style="color:var(--volt)">EARLYBIRD</strong> auto-applied at checkout</p>
-      </div>
-
-      <div class="price-card">
-        <p class="price-tier">Standard</p>
+        <p class="price-tier">Tuition</p>
         <p class="price-amount">$2,000</p>
-        <p class="price-deadline">Available April 28 onward</p>
+        <p class="price-deadline">30 seats · First cohort kicks off May 5</p>
         <ul class="price-features">
           <li>4 live 3-hr sessions (12 hrs total)</li>
           <li>All session recordings (30-day access)</li>
@@ -556,7 +533,7 @@ footer .subtle{color:#444;font-size:13px}
           <li>Templates, prompts, and deployment kit</li>
           <li>100% satisfaction guarantee</li>
         </ul>
-        <a href="https://buy.stripe.com/6oU00l7fIbg6g9Y1zFbEA01" class="btn-outline" id="stripe-regular" target="_blank" rel="noopener">Enroll — $2,000</a>
+        <a href="https://buy.stripe.com/6oU00l7fIbg6g9Y1zFbEA01" class="btn-card-primary" id="stripe-regular" target="_blank" rel="noopener">Enroll — $2,000</a>
       </div>
 
     </div>
@@ -629,7 +606,7 @@ footer .subtle{color:#444;font-size:13px}
 <section class="final-cta reveal">
   <div class="container">
     <h2>Your operations are leaking.<br>Let's plug them.</h2>
-    <a href="#enroll" class="btn-primary">Enroll Now — $1,500 Early Bird</a>
+    <a href="#enroll" class="btn-primary">Enroll Now — $2,000</a>
     <p class="hero-meta">30 seats · First cohort May 5 · Call Russ's AI assistant, leave a message — we'll get back to you: <a href="tel:+16508008971">(650) 800-8971</a></p>
   </div>
 </section>
