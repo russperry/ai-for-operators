@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design Pickle × Canva — Enterprise Brand Operations</title>
+<style>
+  :root {
+    --paper: #F5F2EC;
+    --paper-soft: #EDE8DF;
+    --ink: #1C1B17;
+    --ink-soft: #2A2925;
+    --muted: #76746C;
+    --line: #C9C3B6;
+    --accent: #6E5E3F;     /* warm bronze */
+    --leaf: #2F4A2F;        /* muted forest — DP green refined */
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Söhne', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+  .serif {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', 'Times New Roman', serif;
+    font-weight: 400;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+
+  /* NAV */
+  nav.top {
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 50;
+  }
+  nav.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .logo {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.01em;
+  }
+  .logo .x {
+    color: var(--accent);
+    font-style: italic;
+    margin: 0 12px;
+  }
+  nav.top ul { display: flex; gap: 36px; list-style: none; font-size: 14px; }
+  nav.top ul a { color: var(--ink); text-decoration: none; letter-spacing: 0.02em; }
+  nav.top ul a:hover { color: var(--accent); }
+  .btn-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    letter-spacing: 0.02em;
+  }
+  .btn-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 120px 0 100px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--muted);
+  }
+  h1.hero-h {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 56px;
+    max-width: 1100px;
+  }
+  h1.hero-h em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-text p {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 540px;
+  }
+  .hero-text p + p { margin-top: 18px; }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 36px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .btn-primary:hover { background: var(--leaf); }
+  .btn-secondary {
+    color: var(--ink);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+  }
+  .btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
+  .hero-detail {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* CREDENTIALS BAR */
+  .credentials {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .credentials .wrap {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .credentials .label {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .credentials .row {
+    display: flex; gap: 56px; flex-wrap: wrap; align-items: center;
+  }
+  .credentials .mark {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+
+  /* SECTION SCAFFOLD */
+  section { padding: 120px 0; border-bottom: 1px solid var(--line); }
+  .section-num {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 24px;
+    margin-bottom: 24px;
+    letter-spacing: 0.01em;
+  }
+  h2 {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.022em;
+    margin-bottom: 32px;
+    max-width: 920px;
+  }
+  h2 em { font-style: italic; color: var(--accent); }
+  .lead {
+    font-size: 20px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    line-height: 1.5;
+    margin-bottom: 72px;
+  }
+
+  /* PROBLEM */
+  .pains {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .pain {
+    padding: 48px 48px 48px 0;
+    border-top: 1px solid var(--line);
+  }
+  .pain:nth-child(odd) { padding-right: 56px; border-right: 1px solid var(--line); padding-left: 0; }
+  .pain:nth-child(even) { padding-left: 56px; }
+  .pain-num {
+    font-family: 'Tiempos Headline', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .pain h3 {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+    max-width: 460px;
+  }
+  .pain p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 460px;
+  }
+
+  /* SOLUTION */
+  .solution { background: var(--ink); color: var(--paper); border-bottom: none; }
+  .solution h2 { color: var(--paper); }
+  .solution h2 em { color: #C9B486; }
+  .solution .lead { color: #B5B0A4; }
+  .solution .section-num { color: #C9B486; }
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #3A3833;
+    margin-top: 0;
+    border: 1px solid #3A3833;
+  }
+  .pillar {
+    background: var(--ink);
+    padding: 56px 44px;
+  }
+  .pillar-num {
+    font-family: 'Tiempos Headline', serif;
+    font-style: italic;
+    color: #C9B486;
+    font-size: 18px;
+    margin-bottom: 32px;
+    letter-spacing: 0.02em;
+  }
+  .pillar h3 {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .pillar p {
+    color: #B5B0A4;
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 32px;
+  }
+  .pillar ul {
+    list-style: none;
+    padding-top: 28px;
+    border-top: 1px solid #3A3833;
+  }
+  .pillar ul li {
+    font-size: 14px;
+    color: #DAD5C7;
+    padding: 8px 0;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 24px;
+  }
+  .pillar ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* PROOF */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: stretch;
+  }
+  .quote-card {
+    background: var(--paper-soft);
+    padding: 64px 56px;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .quote-card::before {
+    content: "“";
+    position: absolute;
+    top: 24px; left: 32px;
+    font-family: 'Tiempos Headline', serif;
+    font-size: 96px;
+    color: var(--accent);
+    line-height: 0.7;
+    font-style: italic;
+  }
+  .quote-card .text {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-size: 28px;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  .quote-card .who {
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .quote-card .who strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-transform: none;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+  .stats { display: flex; flex-direction: column; }
+  .stat {
+    flex: 1;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat:first-child { border-top: 1px solid var(--line); }
+  .stat .num {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 12px;
+    color: var(--accent);
+  }
+  .stat .num em { font-style: italic; color: var(--leaf); }
+  .stat .desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 380px;
+  }
+
+  /* HOW */
+  .how { background: var(--paper-soft); }
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 40px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 200px 1fr 2fr;
+    gap: 48px;
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step .week {
+    font-family: 'Tiempos Headline', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+  .step h4 {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+  .step p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 560px;
+  }
+
+  /* INDUSTRIES */
+  .industries-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    margin-top: 24px;
+    border: 1px solid var(--line);
+  }
+  .industry {
+    background: var(--paper);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: baseline;
+  }
+  .industry:hover { background: var(--paper-soft); }
+  .industry h4 {
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.015em;
+  }
+  .industry .desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--leaf);
+    color: var(--paper);
+    text-align: left;
+    border-bottom: none;
+  }
+  .cta .section-num { color: #C9B486; }
+  .cta h2 {
+    color: var(--paper);
+    font-size: clamp(40px, 5vw, 72px);
+    max-width: 1000px;
+  }
+  .cta h2 em { color: #C9B486; font-style: italic; }
+  .cta .lead { color: rgba(245,242,236,0.78); }
+  .cta-form {
+    display: flex; gap: 16px; max-width: 560px;
+    border-bottom: 1px solid rgba(245,242,236,0.4);
+    padding-bottom: 12px;
+  }
+  .cta input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 0;
+    font-size: 17px;
+    font-family: inherit;
+    color: var(--paper);
+  }
+  .cta input::placeholder { color: rgba(245,242,236,0.5); }
+  .cta input:focus { outline: none; }
+  .cta button {
+    background: transparent;
+    color: var(--paper);
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 12px 0;
+  }
+  .cta button:hover { color: #C9B486; }
+  .cta-meta {
+    display: flex; gap: 64px; margin-top: 56px; flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid rgba(245,242,236,0.18);
+  }
+  .cta-meta div {
+    font-size: 13px;
+    color: rgba(245,242,236,0.7);
+    letter-spacing: 0.04em;
+  }
+  .cta-meta strong {
+    display: block;
+    font-family: 'Tiempos Headline', 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--paper);
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 56px 0;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .meta { font-size: 13px; color: #888; letter-spacing: 0.02em; }
+  footer .links { display: flex; gap: 32px; }
+  footer .links a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  footer .links a:hover { color: #C9B486; }
+
+  @media (max-width: 980px) {
+    .hero-grid, .pains, .pillars, .proof-grid, .industries-list { grid-template-columns: 1fr; }
+    .pain:nth-child(odd) { padding-right: 0; border-right: none; }
+    .pain:nth-child(even) { padding-left: 0; }
+    .step { grid-template-columns: 1fr; gap: 12px; }
+    .industry { grid-template-columns: 1fr; gap: 8px; }
+    .credentials .wrap { grid-template-columns: 1fr; gap: 24px; }
+    nav.top ul { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="wrap">
+    <div class="logo">Design Pickle <span class="x">×</span> Canva</div>
+    <ul>
+      <li><a href="#problem">Why now</a></li>
+      <li><a href="#solution">Practice</a></li>
+      <li><a href="#proof">Outcomes</a></li>
+      <li><a href="#how">Engagement</a></li>
+    </ul>
+    <a href="#cta" class="btn-link">Begin a conversation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Official Canva Enterprise Partner · Est. 2015</div>
+    <h1 class="hero-h">
+      The deployment is the easy part.<br>
+      <em>Operating it</em> is what we do.
+    </h1>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p>
+          Enterprise creative teams adopt Canva expecting velocity and brand control.
+          What arrives is a thousand untrained users, a brand drift problem,
+          and a design team buried under template requests.
+        </p>
+        <p>
+          We are the practice that makes Canva work at scale.
+          Migration. Governance. Daily operations.
+          Built for organizations of 250 employees and up,
+          where brand consistency is a board-level concern.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">Request an enterprise consultation</a>
+        <a href="#proof" class="btn-secondary">View client outcomes</a>
+        <p class="hero-detail">
+          A scoped engagement begins within 14 days.<br>
+          First-wave templates live within 30.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+  <div class="wrap">
+    <div class="label">In partnership with leading enterprises in</div>
+    <div class="row">
+      <span class="mark">Hospitality</span>
+      <span class="mark">Higher Education</span>
+      <span class="mark">Financial Services</span>
+      <span class="mark">Real Estate</span>
+      <span class="mark">CPG</span>
+      <span class="mark">Manufacturing</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-num">01 — Why now</div>
+    <h2>Canva is a license. Brand operations is a <em>discipline</em>.</h2>
+    <p class="lead">
+      For a 300-person field team, a multi-campus university system, or a multi-brand portfolio,
+      "self-serve design" without operational infrastructure is a slow erosion of brand equity.
+    </p>
+
+    <div class="pains">
+      <div class="pain">
+        <div class="pain-num">i.</div>
+        <h3>The brand book is documentation. The Canva account is reality.</h3>
+        <p>Without locked templates and governed assets, every regional manager becomes a designer. Within ninety days the brand has drifted in fourteen directions and no one is auditing it.</p>
+      </div>
+      <div class="pain">
+        <div class="pain-num">ii.</div>
+        <h3>Senior designers become a help desk for the rest of the company.</h3>
+        <p>Strategic creative work is displaced by template approvals and rebuild requests. The hires you made for vision are now rebuilding sell sheets at scale.</p>
+      </div>
+      <div class="pain">
+        <div class="pain-num">iii.</div>
+        <h3>Twelve years of brand assets remain in legacy formats.</h3>
+        <p>Migration of a thousand-file library is a six-month internal initiative no one volunteers to own. So Canva adoption stalls at the marketing department and never reaches the field.</p>
+      </div>
+      <div class="pain">
+        <div class="pain-num">iv.</div>
+        <h3>Agency invoices continue. The deployment was supposed to end them.</h3>
+        <p>Canva was approved on the case for cost displacement. Eighteen months later, the agency line item is unchanged, and the design budget has new fees on top of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution" id="solution">
+  <div class="wrap">
+    <div class="section-num">02 — Our practice</div>
+    <h2>Three capabilities. One <em>operating partner</em>.</h2>
+    <p class="lead">
+      We do not sell design hours. We deliver the operational infrastructure that makes Canva return on its investment — built and run by the only Canva partner with a 350-person creative team in-house.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">i. Migration</div>
+        <h3>The library, brought across.</h3>
+        <p>InDesign, Illustrator, PDF, and PowerPoint assets are unlocked and rebuilt as native, editable, brand-safe Canva templates. Audited. Structured. Catalogued.</p>
+        <ul>
+          <li>Legacy format conversion at scale</li>
+          <li>Library audit and architecture</li>
+          <li>Rebrand-ready refresh</li>
+          <li>100 to 10,000-file projects</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">ii. Governance</div>
+        <h3>The brand, defended.</h3>
+        <p>Locked elements, brand kit configuration, role-based template libraries. Field teams self-serve. Senior designers reclaim strategic capacity. The brand stays whole.</p>
+        <ul>
+          <li>Template architecture by role</li>
+          <li>Brand kit and locked-element setup</li>
+          <li>Approved-asset library structure</li>
+          <li>Adoption and training playbook</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">iii. Operations</div>
+        <h3>The capacity, ongoing.</h3>
+        <p>A dedicated team runs daily on top of the Canva instance — producing templates, ad variants, and decks at flat-rate cost. Predictable, scoped, and audit-ready.</p>
+        <ul>
+          <li>Dedicated daily design capacity</li>
+          <li>Social, advertising, decks, collateral</li>
+          <li>Flat-rate engagement model</li>
+          <li>SOC 2 Type II · NDA-ready</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <div class="section-num">03 — Outcomes</div>
+    <h2>What our clients actually <em>measure</em>.</h2>
+
+    <div class="proof-grid">
+      <div class="quote-card">
+        <p class="text">We had six-week template turnarounds and an internal queue no one trusted. Within ninety days, two hundred on-brand Canva templates were live across fourteen markets. My designers got their week back.</p>
+        <div class="who">
+          <strong>Vice President, Brand &amp; Creative</strong>
+          Fortune 500 hospitality group · 12,000 employees
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">−<em>87%</em></div>
+          <div class="desc">Reduction in template requests reaching senior designers within sixty days.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$340k</div>
+          <div class="desc">Average annual agency spend redirected to in-house Canva operations, year one.</div>
+        </div>
+        <div class="stat">
+          <div class="num">14<em>d</em></div>
+          <div class="desc">From engagement kickoff to first-wave templates published organization-wide.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-num">04 — Engagement</div>
+    <h2>Thirty days. <em>Scoped</em>. Defensible.</h2>
+    <p class="lead">A predictable engagement structure designed for executive review and procurement scrutiny. No discovery theater. No timeline drift.</p>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="week">Week 01</div>
+        <h4>Audit and architecture</h4>
+        <p>Mapping of current brand state, asset inventory, team structure, and rollout posture. Output: a migration plan and template architecture defensible to legal, IT, and finance.</p>
+      </div>
+      <div class="step">
+        <div class="week">Week 02</div>
+        <h4>Foundation build</h4>
+        <p>Brand kit configuration, locked-element setup, hero template development. Reviewed and approved by your design ops lead before publication.</p>
+      </div>
+      <div class="step">
+        <div class="week">Weeks 03–04</div>
+        <h4>Migration and rollout</h4>
+        <p>Library conversion, role-based template publishing, team enablement sessions. Field teams begin self-serving without violating brand standards.</p>
+      </div>
+      <div class="step">
+        <div class="week">Ongoing</div>
+        <h4>Daily design operations</h4>
+        <p>Dedicated capacity producing new templates, advertising variants, and presentation decks. Senior in-house designers return to strategic work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section>
+  <div class="wrap">
+    <div class="section-num">05 — Built for</div>
+    <h2>Organizations where brand consistency is <em>a board-level concern</em>.</h2>
+    <p class="lead">We work with companies of 250 employees and up — where decentralized creative production is a daily operational reality, and the cost of brand drift is measured in customer perception, not just budget.</p>
+
+    <div class="industries-list">
+      <div class="industry"><h4>Real Estate</h4><div class="desc">Multi-office brokerages, franchise networks, and property management portfolios.</div></div>
+      <div class="industry"><h4>Higher Education</h4><div class="desc">University systems, multi-campus communications, admissions and advancement teams.</div></div>
+      <div class="industry"><h4>Hospitality</h4><div class="desc">Hotel groups, restaurant chains, travel and tourism brands with regional teams.</div></div>
+      <div class="industry"><h4>Technology</h4><div class="desc">Multi-product organizations, global field marketing, sales enablement at scale.</div></div>
+      <div class="industry"><h4>Financial Services</h4><div class="desc">Banking groups, advisor networks, and compliance-conscious creative operations.</div></div>
+      <div class="industry"><h4>Retail</h4><div class="desc">Multi-store networks, seasonal campaign cycles, franchise and corporate hybrids.</div></div>
+      <div class="industry"><h4>Manufacturing</h4><div class="desc">Industrial brands, distributor networks, trade show and sales collateral programs.</div></div>
+      <div class="industry"><h4>Consumer Packaged Goods</h4><div class="desc">Multi-brand portfolios, retailer-specific campaigns, and global localization.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div class="section-num">06 — Begin</div>
+    <h2>A custom plan, delivered in five business days. <em>Complimentary</em>.</h2>
+    <p class="lead">A consultation with a Design Pickle enterprise lead. We audit your current state, scope the engagement, and present a defensible recommendation. There is no pitch deck. There is no handoff.</p>
+
+    <form class="cta-form" onsubmit="event.preventDefault(); alert('Demo form — connects to your CRM in production.');">
+      <input type="email" placeholder="Work email — 250+ employees" required />
+      <button type="submit">Request consultation →</button>
+    </form>
+
+    <div class="cta-meta">
+      <div><strong>1-855-DESIGN-1</strong>Direct line, enterprise inquiries</div>
+      <div><strong>Within 4 hours</strong>Average response time, business days</div>
+      <div><strong>Mon — Fri</strong>9am – 6pm Pacific Time</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="meta">© 2026 Design Pickle · Official Canva Enterprise Partner · Est. 2015</div>
+    <div class="links">
+      <a href="#">Pricing</a>
+      <a href="#">Case studies</a>
+      <a href="#">Security</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
